@@ -1,23 +1,5 @@
-# set some inputs
-x = -2
-y = 5
-z = -4
-
-# perform the forward pass
-q = x + y  # q becomes 3
-f = q * z  # f becomes -12
-
-dqdx = 1
-dqdy = 1
-
-dfdq = z
-dfdz = q
-
-dfdx = 1 * z
-dfdy = 1 * z
-
 import numpy as np
-
+# MATRIX MULTIPLY
 a = np.array([
     [1, 4, 2],
     [2, 4, 6],
@@ -31,6 +13,7 @@ b = np.array([
 
 print(b.T.shape, a.T.shape)
 print(np.matmul(b.T, a.T).shape)
+
 
 
 '''
@@ -50,7 +33,7 @@ gradient = [
 ]
 
 '''
-
+#GRADIENT DESCENT
 lr = 0.01
 
 x = 5
@@ -67,3 +50,23 @@ for i in range(2000):
 
     x += -dfdx * lr
     y += -dfdy * lr
+   
+# CHAIN RULE
+# set some inputs
+x = -2
+y = 5
+z = -4
+
+# perform the forward pass
+q = x + y  # q becomes 3
+f = q * z  # f becomes -12
+
+dqdx = 1
+dqdy = 1
+
+dfdq = z
+dfdz = q
+
+dfdx = 1 * z
+dfdy = 1 * z
+
